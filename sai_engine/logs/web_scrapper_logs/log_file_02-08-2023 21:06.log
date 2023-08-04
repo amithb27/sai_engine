@@ -1,0 +1,2 @@
+INFO: <2023-08-02 21:06>  Running get_scripts_test_info([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f2bca0c3970>), ('stm_version', '7_3_1'), ('stm_build', '11566'), ('scripts', [])])
+INFO: <2023-08-02 21:06>  Running get_webdriver([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f2bca0c3970>), ('url', '/home/amith/sailytics/production_server/sai_engine/sai_engine/jenkins_logs/7_3_1/13/consolidated_report.html')])

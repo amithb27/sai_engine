@@ -1,0 +1,7 @@
+INFO: <2023-08-03 05:51>  Running get_stm_builds_from_map([('self', <sai_engine.lib.jenkins_utilities.JenkinsUtilities object at 0x7fd1f6475f90>), ('stm_version', '7_3_1')])
+INFO: <2023-08-03 07:01>  Running get_stm_builds_from_map([('self', <sai_engine.lib.jenkins_utilities.JenkinsUtilities object at 0x7fd8edbf3cd0>), ('stm_version', '7_3_1')])
+INFO: <2023-08-03 07:01>  Running get_jenkins_build_from_map([('self', <sai_engine.lib.jenkins_utilities.JenkinsUtilities object at 0x7fd8edbf3cd0>), ('stm_version', '7_3_1'), ('stm_build', '11566')])
+INFO: <2023-08-03 07:02>  Running get_stm_builds_from_map([('self', <sai_engine.lib.jenkins_utilities.JenkinsUtilities object at 0x7fdbfe58fd90>), ('stm_version', '7_3_1')])
+INFO: <2023-08-03 07:02>  Running get_jenkins_build_from_map([('self', <sai_engine.lib.jenkins_utilities.JenkinsUtilities object at 0x7fdbfe58fd90>), ('stm_version', '7_3_1'), ('stm_build', '11566')])
+INFO: <2023-08-03 11:52>  Running get_all_regression_testbeds([('self', <sai_engine.lib.jenkins_utilities.JenkinsUtilities object at 0x7f0db7146bf0>), ('stm_version', '8_0_1')])
+INFO: <2023-08-03 11:53>  Running get_all_regression_testbeds([('self', <sai_engine.lib.jenkins_utilities.JenkinsUtilities object at 0x7fb7dc97f730>), ('stm_version', '8_0_1')])

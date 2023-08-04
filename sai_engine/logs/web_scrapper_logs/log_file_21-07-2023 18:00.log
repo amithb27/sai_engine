@@ -1,0 +1,13 @@
+INFO: <2023-07-21 18:00>  Running stm_build_statistics([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f6cf1a4bfa0>), ('stm_version', '8_0_1'), ('stm_build', 0)])
+INFO: <2023-07-21 18:00>  Running get_stm_build([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f6cf1a4bfa0>), ('stm_version', '8_0_1'), ('script_name', 'alarms'), ('job_build_num', 0), ('log_file_path', '')])
+INFO: <2023-07-21 18:00>  Running get_page_url([('self', <sai_engine.lib.scraper_utilities.webScraper_utilities object at 0x7f6cf0502680>), ('stm_version', '8_0_1'), ('script_name', 'alarms'), ('job_build_num', '23')])
+INFO: <2023-07-21 18:00>  Validating script name alarms
+INFO: <2023-07-21 18:00>  Running validate_script([('self', <sai_engine.lib.scraper_utilities.webScraper_utilities object at 0x7f6cf0502680>), ('stm_ver', '8_0_1'), ('script_name', 'alarms')])
+INFO: <2023-07-21 18:00>  Page Url : /home/amith/sailytics/production_server/sailytics-django/sai_engine/jenkins_logs/8_0_1/23/log_alarms.html
+INFO: <2023-07-21 18:00>  Running validate_log_file([('self', <sai_engine.lib.scraper_utilities.webScraper_utilities object at 0x7f6cf0502680>), ('full_path', '/home/amith/sailytics/production_server/sailytics-django/sai_engine/jenkins_logs/8_0_1/23/log_alarms.html')])
+INFO: <2023-07-21 18:00>  Running check_file_exists([('self', <sai_engine.lib.scraper_utilities.webScraper_utilities object at 0x7f6cf0502680>), ('full_path', '/home/amith/sailytics/production_server/sailytics-django/sai_engine/jenkins_logs/8_0_1/23/log_alarms.html')])
+ERROR: <2023-07-21 18:00>  Log file , /home/amith/sailytics/production_server/sailytics-django/sai_engine/jenkins_logs/8_0_1/23/log_alarms.html does not exist. Please recheck if file is downloaded
+INFO: <2023-07-21 18:00>  2048
+INFO: <2023-07-21 18:00>  Page url to be scraped /home/amith/sailytics/production_server/sailytics-django/sai_engine/jenkins_logs/8_0_1/23/log_alarms.html
+INFO: <2023-07-21 18:00>  Running get_webdriver([('self', <sai_engine.lib.scraper_utilities.webScraper_utilities object at 0x7f6cf0502680>), ('url', '/home/amith/sailytics/production_server/sailytics-django/sai_engine/jenkins_logs/8_0_1/23/log_alarms.html')])
+INFO: <2023-07-21 18:00>  Running click_element([('self', <sai_engine.lib.scraper_utilities.webScraper_utilities object at 0x7f6cf0502680>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="a5db7ba6a1fd7cb9d325ea1cf8f5624b")>), ('element_locator_type', 'CLASS_NAME'), ('value', 'element-header-right')])

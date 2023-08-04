@@ -1,0 +1,70 @@
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Gui Tests 7 3 1
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . History')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s15"><span class="parent-name">ConOut . </span>History</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: History
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Host Limit')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s16"><span class="parent-name">ConOut . </span>Host Limit</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Host Limit
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Hostequalization')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s17"><span class="parent-name">ConOut . </span>Hostequalization</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Hostequalization
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Hostrate')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s18"><span class="parent-name">ConOut . </span>Hostrate</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Hostrate
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Kni')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s19"><span class="parent-name">ConOut . </span>Kni</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Kni
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Miscellaneous')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s20"><span class="parent-name">ConOut . </span>Miscellaneous</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Miscellaneous
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Multifib')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s21"><span class="parent-name">ConOut . </span>Multifib</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Multifib
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Multifib-Qinq')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s22"><span class="parent-name">ConOut . </span>Multifib-Qinq</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Multifib-Qinq
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Nat')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s23"><span class="parent-name">ConOut . </span>Nat</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Nat
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Netflow Destinations')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s24"><span class="parent-name">ConOut . </span>Netflow Destinations</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Netflow Destinations
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Pcaps')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s25"><span class="parent-name">ConOut . </span>Pcaps</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Pcaps
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Peerinterfacetrack')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s26"><span class="parent-name">ConOut . </span>Peerinterfacetrack</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Peerinterfacetrack
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Persistency 7 3 1')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s27"><span class="parent-name">ConOut . </span>Persistency 7 3 1</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Persistency 7 3 1
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Policyobject')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s28"><span class="parent-name">ConOut . </span>Policyobject</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Policyobject
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Quota')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s29"><span class="parent-name">ConOut . </span>Quota</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Quota
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Rateplans Tests')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s30"><span class="parent-name">ConOut . </span>Rateplans Tests</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Rateplans Tests
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Redirect')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s31"><span class="parent-name">ConOut . </span>Redirect</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Redirect
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Redirect Singlebump')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s32"><span class="parent-name">ConOut . </span>Redirect Singlebump</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Redirect Singlebump
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Script Infra Gui 7 3 1')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s33"><span class="parent-name">ConOut . </span>Script Infra Gui 7 3 1</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Script Infra Gui 7 3 1
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Subnethost')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s34"><span class="parent-name">ConOut . </span>Subnethost</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Subnethost
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Timed')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s35"><span class="parent-name">ConOut . </span>Timed</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Timed
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . User Applications Counters')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s36"><span class="parent-name">ConOut . </span>User Applications Counters</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: User Applications Counters
+INFO: <2023-08-02 21:16>  Running click_element([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f444b049b40>), ('driver', <selenium.webdriver.chrome.webdriver.WebDriver (session="3ffb0bab2115d2a1e4530096c5101f5e")>), ('element_locator_type', 'LINK_TEXT'), ('value', 'ConOut . Userlistner')])
+INFO: <2023-08-02 21:16>  Element clicked <a href="#suites?s1-s37"><span class="parent-name">ConOut . </span>Userlistner</a>
+INFO: <2023-08-02 21:16>  Got the testcase failure details of: Userlistner
