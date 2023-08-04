@@ -1,2 +1,0 @@
-INFO: <2023-07-27 13:16>  Running stm_build_statistics([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f13a8038f10>), ('stm_version', '7_3_1'), ('stm_build', '0')])
-INFO: <2023-07-27 13:16>  Running stm_build_statistics([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f13a3f11210>), ('stm_version', '7_3_1'), ('stm_build', '0')])

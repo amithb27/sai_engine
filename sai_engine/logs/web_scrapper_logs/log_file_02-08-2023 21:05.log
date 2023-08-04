@@ -1,4 +1,0 @@
-INFO: <2023-08-02 21:05>  Running get_scripts_test_info([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7fc0d622fb80>), ('stm_version', '7_3_1'), ('stm_build', '12312'), ('scripts', [])])
-ERROR: <2023-08-02 21:05>  STM build 12312 not valid. Please recheck the number or populate data.
-INFO: <2023-08-02 21:05>  Running get_scripts_test_info([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7f2bca14dcf0>), ('stm_version', '7_3_1'), ('stm_build', '12312'), ('scripts', [])])
-ERROR: <2023-08-02 21:05>  STM build 12312 not valid. Please recheck the number or populate data.

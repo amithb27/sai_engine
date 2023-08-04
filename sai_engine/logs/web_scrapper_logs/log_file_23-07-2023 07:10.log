@@ -1,4 +1,0 @@
-INFO: <2023-07-23 07:10>  Running stm_build_statistics([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7fba7fb77910>), ('stm_version', 'v_8_0_1'), ('stm_build', '11532')])
-INFO: <2023-07-23 07:10>  No Jenkins job mapping found for stm build 11532
-INFO: <2023-07-23 07:10>  Running stm_build_statistics([('self', <sai_engine.lib.web_scraper_bs4.webScraper object at 0x7fba7fbfb0d0>), ('stm_version', 'v8_0_1'), ('stm_build', '11532')])
-INFO: <2023-07-23 07:10>  No Jenkins job mapping found for stm build 11532

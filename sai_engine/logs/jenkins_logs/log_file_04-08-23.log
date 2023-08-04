@@ -1,1 +1,0 @@
-INFO: <2023-08-04 06:35>  Running get_all_regression_testbeds([('self', <sai_engine.lib.jenkins_utilities.JenkinsUtilities object at 0x7f00944be1d0>), ('stm_version', '7_3_1')])
