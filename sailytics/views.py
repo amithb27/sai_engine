@@ -15,19 +15,36 @@ def get_regression_testbeds(request, stm_version):
     }
     return Response(data=data,status=status.HTTP_200_OK) 
 
-@api_view(['GET'])
-def testbed_status(request, stm_host):
+@api_view(['POST'])
+def testbed_status(request):
+    stm_host = request.data
+    print(stm_host , '------>this is host ')
+    # args : 
+    #         stm_host
+    #             type : (str or list(strs))
+
+    #  returns : 
+    #             list(dicts)
+    
     testbed_obj = testbed_controller()
     data = {
         "value": testbed_obj.is_testbed_free(stm_host)
     }
     return Response(data=data,status=status.HTTP_200_OK)
 
-@api_view(['GET'])
-def reserve_testbed(request, stm_host, user, message):
+@api_view(['POST'])
+def reserve_testbed(request):
+#     # input {"host":"10.1.11.106",
+# "message:" : "testing",
+# "user":"admin"
+# }
+    data = request.data 
+    
+    print(data , '----->post data of reservation')
+    
     testbed_obj = testbed_controller()
     data = {
-        "value": testbed_obj.testbed_reserve(stm_host,user,message)
+        "value": testbed_obj.testbed_reserve(data['host'],data['user'],data['message'])
     }
     return Response(data=data,status=status.HTTP_200_OK)
 
@@ -64,7 +81,7 @@ def get_builds_trend_test(request, stm_version):
     data = {
         "value":buildData
     }
-    print(data)
+
     
     return Response(data, status=status.HTTP_200_OK)
         
@@ -98,13 +115,17 @@ def populate_scripts_test_details(request, stm_version, stm_build):
 def populate_build_statistics(request, stm_version, stm_build):
     server_obj = webScraper()
     jenkin_obj = JenkinsUtilities()
+    statistics=''
     all_stm_builds = jenkin_obj.get_stm_builds_from_map(stm_version)
-    if not all_stm_builds:
+    if 1:
         server_obj.stm_build_statistics(stm_version, '000000')
         all_stm_builds = jenkin_obj.get_stm_builds_from_map(stm_version)
+        print(all_stm_builds , 'this is ----->build')
     else:
         all_stm_builds = [0]
+    print('-------------------->alll builds',all_stm_builds)
     for stm_build in all_stm_builds:
+        
         statistics = server_obj.stm_build_statistics(stm_version, stm_build)
         build_statistics = statistics['Total_Testcases_In_Suite']
         build_number = statistics['Stm_Build_Number']
@@ -138,6 +159,7 @@ def populate_build_statistics(request, stm_version, stm_build):
                                 passed_testCase = build_statistics['Pass_tc'],
                                 failed_testCase=build_statistics['Fail_tc']
                                 )
+            
             for key,value in testcase_statistics.items():
                 Script.objects.create(build = build ,
                                     name = key ,
@@ -145,6 +167,15 @@ def populate_build_statistics(request, stm_version, stm_build):
                                     passed_testCase = value['Pass_tc'],
                                     failed_testCase = value['Fail_tc']
                 ) 
+            script_test_info = server_obj.get_scripts_test_info(stm_version,stm_build)
+            for script , value in script_test_info.items():
+                script_obj = Script.objects.get(build = build , name = script)
+                for fail_reason in value:
+                    script_inst = ScriptTestInfo(script = script_obj)
+                    script_inst.status = fail_reason['status']
+                    script_inst.message = fail_reason['message']
+                    script_inst.main = fail_reason['detail']
+                    script_inst.save()
     return Response({'message':'created' , 'content':statistics}, status= status.HTTP_200_OK)
 
 @api_view(['GET'])
@@ -155,7 +186,7 @@ def get_builds_trend(request, stm_version, count=10):
 
 @api_view(['GET'])
 def get_latest_builds_total_TC(request, stm_version):
-    print("hello ")
+   
     server1_obj = webScraper()
     if request.method == 'GET':
         return JsonResponse(server1_obj.get_latest_builds_total_TC(stm_version), safe=False)
@@ -193,7 +224,7 @@ def get_build_array(request , stm_version):
             'passed':passed,
             "failed":failed  
     }
-    print(build_array)
+
     return Response(data=build_array , status= status.HTTP_200_OK)
     
 """
@@ -208,7 +239,7 @@ def get_script_testcases(request, stm_version, script_name, job_build_num=''):
 
 #     server_obj = 
 #     body = {"value":server_obj.stm_build_statistics(stm_version, stm_build)}
-#     if request.method == 'GET':
+#     if request.method == 'GET': 
 #         return Response(body, status= status.HTTP_200_OK)
 
 @api_view(['GET'])
@@ -261,6 +292,50 @@ def get_failed_scripts(request , stm_version):
     stm_builds = StmBuild.objects.filter(version = version_obj).values_list('build_number')
     builds_array = [build for (build,) in stm_builds]
     return Response(data={'value':builds_array},status= status.HTTP_200_OK)
+
+@api_view(['GET'])
+def get_all_script(request , stm_version):
+    server_obj = JenkinsUtilities()
+    scripts = server_obj.get_all_script_names(stm_version)
+    data = {'value':scripts}
+    return Response(data= data)
+
+@api_view(['GET'])
+def script_run_request(self):
+    parameters = {
+        "STM_VERSION" : "8_0_1",
+        "STM_IP" : "10_1_12_90",
+        "SCRIPT_FILE_NAME" : "miscellaneous",
+        "CUSTOM_BUILD_PATH" : "default"
+    }
+    ser_obj = JenkinsUtilities()
+    data = {
+        "value": ser_obj.build_jenkins_job(parameters)
+    }
+    return Response(data=data,status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+def get_failed_details(request):
+    data = request.data
+    build_number = data['build']
+    version_number = data['version']
+    script_name = data['script']
+    print(data)
+    version_inst = Version.objects.get(version_name = version_number)
+    print(version_inst , build_number )
+    build_inst = StmBuild.objects.get(build_number = build_number , version = version_inst)
     
+    script_inst = Script.objects.get(build = build_inst , name = script_name)
+
+    failed_script_details_querySet =  script_inst.failedScripts.all()
+    failed_script_details_list = []
+    for testcase in failed_script_details_querySet:
+        failed_script_details = {}
+        failed_script_details['message'] = testcase.message
+        failed_script_details['status'] = testcase.status
+        failed_script_details['content'] = testcase.main
+        failed_script_details_list.append(failed_script_details)
     
+    print(failed_script_details_list , '-------------->failed_script_details_list ')
     
+    return Response(data = {"value":failed_script_details_list} , status=status.HTTP_200_OK)

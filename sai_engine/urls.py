@@ -40,8 +40,12 @@ urlpatterns = [
     path('populate_build_statistics/<stm_version>/<stm_build>' , views.populate_build_statistics , name = 'populate_build_statistics'),
     path('populate_scripts_test_details/<stm_version>/<stm_build>' , views.populate_scripts_test_details, name='populate_scripts_test_details'),
     path('get_regression_testbeds/<stm_version>/' , views.get_regression_testbeds, name='get_regression_testbeds'),
-    path('testbed_reserve/<stm_host>/<user>/<message>', views.reserve_testbed, name='reserve_testbed'),
+    path('testbed_reserve', views.reserve_testbed, name='reserve_testbed'),
     path('testbed_release/<stm_host>/', views.release_testbed, name='release_testbed'),
-    path('testbed_status/<stm_host>/', views.testbed_status, name='testbed_status')
+    path('testbed_status', views.testbed_status, name='testbed_status'),
+    path('get_scripts/<stm_version>', views.get_all_script , name='get_all_script'),
+    path('get_script_details/', views.get_failed_details , name='get_failed_details'),
+    path('request_script_run/', views.script_run_request , name='script_run_request'),
+    
     # path('generate_latest_data/<stm_version>', views.generate_latest_data, name="generate_latest_data")
     ]

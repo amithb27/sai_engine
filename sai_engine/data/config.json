@@ -1,14 +1,15 @@
 {
     "NODES" : {
         "regression_testbeds" : {
-            "7_3_1" : ["10.1.11.76", "10.1.11.106"],
-            "8_0_1" : ["10.1.11.80", "10.1.12.90", "10.1.12.119", "10.1.15.60"]
+            "7_3_1" : ["10_1_11_76", "10_1_11_106"],
+            "8_0_1" : ["10_1_11_80", "10_1_12_90", "10_1_12_119", "10_1_15_60"]
         },
         "pylogger" : {
             "web_scraper_log_file" : "/sai_engine/logs/web_scrapper_logs",
             "jenkins_log_file" : "/sai_engine/logs/jenkins_logs"
         },
         "jenkins" : {
+            "script_run_job_name" : "run_single_script",
             "ver_log_path_map" : {
                 "7_3_1" : "/sai_engine/jenkins_logs/7_3_1/",
                 "8_0_1" : "/sai_engine/jenkins_logs/8_0_1/"

@@ -7,6 +7,7 @@ from django.conf import settings
 from jenkins import Jenkins
 from os import system, path
 from .base_utilities import BaseUtilities
+from .testbed_reservation import testbed_controller
 import pylogging
 import json
 
@@ -39,6 +40,7 @@ class JenkinsUtilities(object):
         self.__jenkins_version_job_map__ = self.node_configs['jenkins']["version_job_map"]
         self.__jenkins_valid_script_names__ = self.node_configs['jenkins']["valid_script_names"]
         self.__jenkins_regression_testbeds__ = self.node_configs['regression_testbeds']
+        self.__jenkins_run_script_name__ = self.node_configs['jenkins']['script_run_job_name']
         with open(self.__build_map_filepath__, 'r') as fobj:
             self.__sbuild_jbuild_map__ = json.load(fobj)
         self.server_obj = Jenkins(
@@ -51,6 +53,64 @@ class JenkinsUtilities(object):
         self.logger = pylogging.PyLogging(LOG_FILE_PATH = self.__jenkins_log_filepath__ + '/log_file_', LOG_FILE_FORMAT = '%d-%m-%y')
         return
 
+    def get_job_input_parameters(self, job_name):
+        """_summary_
+        Args:
+            job_name (_type_): _description_
+        """
+        params = {}
+        for parameter in self.server_obj.get_job_info(job_name)['property'][0]['parameterDefinitions']:
+            params.update(
+                {
+                    parameter['name']: parameter['defaultParameterValue']['value']
+                }
+            )
+        return params
+            
+    def build_jenkins_job(self, parameters={}):
+        """This function triggers jenkins job
+        Args:
+            STM_VERSION (str):                      stm_7.3.1
+            STM_IP (str) :                          10.1.11.76
+            SCRIPT_FILE_NAME (str) :                accesspoint-hierarchy
+            CUSTOM_BUILD_PATH (str) :               LATEST
+                                                    /11449/stm-install-18.04-7.3.1-11448-202010613.tgz
+
+            BRANCH (str, optional) :                default
+                                                    build/builds/stm_7.3.1
+            EXIT_ON_FAILURE (boolean, optional) :   True
+            DEPLOY_BUILD (boolena, optional) :      False
+            EXCLUDE_TESTCASES (boolean, optional):  False
+            TESTCASES_TO_EXCLUDE (str, optional) :  TC0000
+            INCLUDE_TESTCASES (boolean, optional):  False
+            TESTCASES_TO_INCLUDE (str, optional) :  TC0000
+            LAG (booelan, optional) :               False
+        Usage:
+            build_jenkins_job('api-test', {'param1': 'test value 1', 'param2': 'test value 2'})
+        """
+        self.logger.info('Running ' + BaseUtilities().get_function_name() + '(' + \
+                  str(BaseUtilities().get_function_parameters_and_values()) +')')
+        
+        required_parameters = ('STM_VERSION', 'STM_IP', 'SCRIPT_FILE_NAME', 'CUSTOM_BUILD_PATH')
+        if not set(required_parameters) <= set(parameters):
+            self.logger.error('Required parameters not provided. Required: {}\nProvided: {}'.format(
+                required_parameters, parameters
+            ))
+            return False
+        other_parameters = self.get_job_input_parameters(self.__jenkins_run_script_name__)
+        all_parameters = {**other_parameters,**parameters}
+        all_parameters['STM_IP'] = all_parameters['STM_IP'].replace("_",".")
+        all_parameters['BRANCH'] = 'default' if not all_parameters['BRANCH'] else all_parameters['BRANCH']
+        del all_parameters['STM_VERSION']
+        all_parameters['CUSTOM_BUILD_PATH'] = 'LATEST' if not all_parameters['CUSTOM_BUILD_PATH']\
+                                                        else all_parameters['CUSTOM_BUILD_PATH']
+        all_parameters['DEPLOY_BUILD'] = True
+        
+        print('\nFinal', all_parameters)
+        ret = self.server_obj.build_job(self.__jenkins_run_script_name__, all_parameters)
+        print('This is the output of build_job', ret)
+        return True
+        
     def get_all_regression_testbeds(self, stm_version=''):
         """This API returns all the testbeds that are available.
 
@@ -65,7 +125,7 @@ class JenkinsUtilities(object):
         """
         self.logger.info('Running ' + BaseUtilities().get_function_name() + '(' + \
                   str(BaseUtilities().get_function_parameters_and_values()) +')')
-        return self.__jenkins_regression_testbeds__ if not stm_version else self.__jenkins_regression_testbeds__[stm_version]
+        return self.__jenkins_regression_testbeds__ if not stm_version else sorted(self.__jenkins_regression_testbeds__[stm_version])
         
     def get_all_script_names(self, stm_version):
         """_summary_
@@ -126,6 +186,7 @@ class JenkinsUtilities(object):
             print('Map data after updating: ', map_data)
         with open(self.__build_map_filepath__, 'w') as fobj:
             json.dump(map_data, fobj, indent=4)
+            fobj.close()
         return True
     
     def get_stm_builds_from_map(self, stm_version):
@@ -140,10 +201,12 @@ class JenkinsUtilities(object):
         """
         self.logger.info('Running ' + BaseUtilities().get_function_name() + '(' + \
                   str(BaseUtilities().get_function_parameters_and_values()) +')')
+        
         if self.__sbuild_jbuild_map__.get(stm_version):
             return list(self.__sbuild_jbuild_map__[stm_version].keys())
         else:
             self.logger.error('Unsupported argument specified. {} doesnt exists.'.format(stm_version))
+            print('------>logger', 'Unsupported argument specified. {} doesnt exists.'.format(stm_version))
             return {}
 
     def get_stm_build_from_map(self, stm_version, jenkins_build):
